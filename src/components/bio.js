@@ -22,7 +22,7 @@ function Bio() {
           <Container>
             <Image
               fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
+              alt={author.name}
               style={{
                 marginRight: rhythm(1 / 2),
                 marginBottom: 0,
@@ -34,11 +34,10 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
+              {author.about}
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                Follow on Twitter
               </a>
             </p>
           </Container>
@@ -59,7 +58,10 @@ const bioQuery = graphql`
     }
     site {
       siteMetadata {
-        author
+        author {
+          name
+          about
+        }
         social {
           twitter
         }
