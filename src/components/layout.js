@@ -25,10 +25,7 @@ class Layout extends React.Component {
       <Wrapper>
         <div
           style={{
-            marginLeft: `auto`,
-            marginRight: `auto`,
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+            gridColumn: "1 / -1",
           }}
         >
           <header>{header}</header>
@@ -47,11 +44,19 @@ class Layout extends React.Component {
 
 const Wrapper = styled.div`
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 12px;
+  max-width: ${rhythm(24)};
+  margin: 0 auto;
+  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `
 
 const Footer = styled.footer`
   text-align: center;
   margin: 24px;
+  grid-column: 1 / -1;
 `
 
 export default Layout

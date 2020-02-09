@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link as GatsbyLink } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
 import styled from "styled-components"
+import { rhythm } from "../utils/typography"
 
 const NavQuery = graphql`
   query NavQuery {
@@ -25,15 +26,32 @@ const NavQuery = graphql`
   }
 `
 
+const Link = ({ ...props }) => (
+  <GatsbyLink activeClassName="current-page" {...props} />
+)
+
 const StyledLink = styled(Link)`
+  grid-column: span 3;
+  box-shadow: 0 1px 0 0 black;
   color: black;
-  box-shadow: none;
+  &:not(:last-of-type) {
+    margin-right: ${rhythm(0.5)};
+  }
+  &:hover {
+    color: gray;
+    box-shadow: none;
+  }
+  &.current-page {
+    color: pink;
+    box-shadow: none;
+  }
 `
 
 const Nav = ({ ...props }) => {
-  const { allMdx } = useStaticQuery(NavQuery)
-
-  const pages = allMdx.edges
+  const {
+    allMdx: { edges },
+  } = useStaticQuery(NavQuery)
+  const pages = edges
 
   return (
     <nav {...props}>
@@ -49,7 +67,8 @@ const Nav = ({ ...props }) => {
 }
 
 const StyledNav = styled(Nav)`
-  opacity: 0.5;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 `
 
 export default StyledNav
