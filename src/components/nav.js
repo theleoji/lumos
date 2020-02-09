@@ -69,6 +69,7 @@ const Nav = ({ ...props }) => {
 const StyledNav = styled(Nav)`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  margin-bottom: ${rhythm(2)};
 `
 
 export default StyledNav

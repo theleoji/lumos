@@ -53,9 +53,6 @@ const Wordpress2016 = {
         paddingLeft: rhythm(9 / 16),
       },
     },
-    "h1,h2,h3,h4,h5,h6": {
-      marginTop: rhythm(2),
-    },
     h4: {
       letterSpacing: "0.140625em",
       textTransform: "uppercase",

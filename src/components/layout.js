@@ -1,26 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
+import Header from "./header"
 import Nav from "./nav"
 
 class Layout extends React.Component {
   render() {
-    const { title, children } = this.props
-    let header
-
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        {title}
-      </h1>
-    )
+    const { children } = this.props
     return (
       <Wrapper>
         <div
@@ -28,7 +16,7 @@ class Layout extends React.Component {
             gridColumn: "1 / -1",
           }}
         >
-          <header>{header}</header>
+          <Header />
           <Nav />
           <main>{children}</main>
         </div>

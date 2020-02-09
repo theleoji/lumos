@@ -5,7 +5,7 @@ module.exports = {
       name: `Leo Ji`,
       about: `Just a guy.`,
     },
-    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
+    description: `software engineer and news nerd`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
       twitter: `theleoji`,
