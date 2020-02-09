@@ -32,7 +32,7 @@ const Link = ({ ...props }) => (
 )
 
 const StyledLink = styled(Link)`
-  grid-column: span 3;
+  grid-column: span 2;
   box-shadow: 0 3px 0 0 ${gray(80)};
   color: black;
   &:not(:last-of-type) {
