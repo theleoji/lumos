@@ -1,41 +1,55 @@
 import React from "react"
 import { Link } from "gatsby"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import styled from "styled-components"
 
-const Nav = data => {
+const NavQuery = graphql`
+  query NavQuery {
+    allMdx(
+      filter: { frontmatter: { show_nav: { eq: true } } }
+      limit: 10
+      sort: { order: ASC, fields: frontmatter___nav_order }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  }
+`
+
+const StyledLink = styled(Link)`
+  color: black;
+  box-shadow: none;
+`
+
+const Nav = ({ ...props }) => {
+  const data = useStaticQuery(NavQuery)
+
   const pages = data.allMdx.edges
 
   return (
-    <nav>
+    <nav {...props}>
       {pages.map(page => (
         <React.Fragment key={page.node.fields.slug}>
-          <Link to={page.node.fields.slug}>{page.node.frontmatter.title}</Link>{" "}
+          <StyledLink to={page.node.fields.slug}>
+            {page.node.frontmatter.title}
+          </StyledLink>{" "}
         </React.Fragment>
       ))}
     </nav>
   )
 }
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allMdx(limit: 1000) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={Nav}
-  />
-)
+const StyledNav = styled(Nav)`
+  opacity: 0.5;
+`
+
+export default StyledNav

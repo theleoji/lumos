@@ -1,13 +1,14 @@
 backend:
-  name: test-repo
+  name: github
+  repo: theleoji/lumos
 
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: content/blog
+  - name: pages
+    label: Pages
+    folder: content/pages
     create: true
     fields:
       - { name: path, label: Path }
