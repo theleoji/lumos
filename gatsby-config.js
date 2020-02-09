@@ -6,7 +6,7 @@ module.exports = {
       about: `Just a guy.`,
     },
     description: `software engineer and news nerd`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://leoji.codes/`,
     social: {
       twitter: `theleoji`,
     },
@@ -67,19 +67,6 @@ module.exports = {
       options: {
         // edit below
         // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
       },
     },
     {
