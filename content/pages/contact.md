@@ -1,9 +1,10 @@
 ---
+path: /contact/
+date: 2020-02-09T21:36:20.102Z
 title: Contact
 description: say hello!
 show_nav: true
 nav_order: 100
-path: /contact/
 ---
 
 I'm usually online, and I'm most easily found at:
