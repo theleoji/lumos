@@ -31,9 +31,9 @@ const StyledLink = styled(Link)`
 `
 
 const Nav = ({ ...props }) => {
-  const data = useStaticQuery(NavQuery)
+  const { allMdx } = useStaticQuery(NavQuery)
 
-  const pages = data.allMdx.edges
+  const pages = allMdx.edges
 
   return (
     <nav {...props}>
