@@ -1,5 +1,5 @@
 ---
-title: "Leo Ji"
+title: "Home"
 slug: ""
 description: "Hi!"
 ---

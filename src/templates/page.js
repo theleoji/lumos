@@ -1,10 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Button from "../components/button"
 
 class PageTemplate extends React.Component {
   render() {
