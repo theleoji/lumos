@@ -2,6 +2,7 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
+import gray from "gray-percentage"
 import styled from "styled-components"
 import { rhythm } from "../utils/typography"
 
@@ -32,7 +33,7 @@ const Link = ({ ...props }) => (
 
 const StyledLink = styled(Link)`
   grid-column: span 3;
-  box-shadow: 0 1px 0 0 black;
+  box-shadow: 0 3px 0 0 ${gray(80)};
   color: black;
   &:not(:last-of-type) {
     margin-right: ${rhythm(0.5)};
@@ -42,8 +43,7 @@ const StyledLink = styled(Link)`
     box-shadow: none;
   }
   &.current-page {
-    color: pink;
-    box-shadow: none;
+    box-shadow: 0 3px 0 0 ${gray(20)};
   }
 `
 
