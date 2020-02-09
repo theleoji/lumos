@@ -1,0 +1,21 @@
+[build]
+  publish = "./public"
+  command = "yarn run build"
+
+[[redirects]]
+  from = "https://leoji.dev/*"
+  to = "https://leoji.codes/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.leoji.codes/*"
+  to: = "https://leoji.codes/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://theleoji.netlify.com/*"
+  to = "https://leoji.codes/:splat"
+  status = 301
+  force = true
