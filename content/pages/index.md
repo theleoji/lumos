@@ -6,5 +6,6 @@ description: Hi!
 show_nav: true
 nav_order: -1
 ---
+Hi. I'm Leo. I'm currently a software engineer at The Washington Post.
 
-Hello!
+Previously, I studied at Northwestern University, where I held multiple roles in student-run organizations.
