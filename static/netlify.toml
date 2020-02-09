@@ -19,9 +19,3 @@
   to = "https://leoji.codes/:splat"
   status = 301
   force = true
-
-[[redirects]]
-  from = "/blog/"
-  to = "https://leoji.blog/"
-  status = 301
-  force = true

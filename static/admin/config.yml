@@ -22,4 +22,5 @@ collections:
           widget: "number",
           required: false,
         }
+      - { name: external_link, label: "Redirect URL" }
       - { name: body, label: Body, widget: markdown }

@@ -20,6 +20,8 @@ const NavQuery = graphql`
           }
           frontmatter {
             title
+            external_link
+            path
           }
         }
       }
@@ -31,7 +33,7 @@ const Link = ({ ...props }) => (
   <GatsbyLink activeClassName="current-page" {...props} />
 )
 
-const StyledLink = styled(Link)`
+const StyleALink = component => styled(component)`
   grid-column: span 2;
   box-shadow: 0 3px 0 0 ${gray(80)};
   color: black;
@@ -47,6 +49,27 @@ const StyledLink = styled(Link)`
   }
 `
 
+const StyledInternalLink = StyleALink(Link)
+const StyledExternalLink = StyleALink("a")
+
+const NavItem = ({ page }) => {
+  if (page.node.frontmatter.external_link) {
+    // if external link is defined, return an external link
+    return (
+      <StyledExternalLink href={page.node.frontmatter.external_link}>
+        {page.node.frontmatter.title}
+      </StyledExternalLink>
+    )
+  } else {
+    // else, return an internal link
+    return (
+      <StyledInternalLink to={page.node.frontmatter.path}>
+        {page.node.frontmatter.title}
+      </StyledInternalLink>
+    )
+  }
+}
+
 const Nav = ({ ...props }) => {
   const {
     allMdx: { edges },
@@ -57,9 +80,7 @@ const Nav = ({ ...props }) => {
     <nav {...props}>
       {pages.map(page => (
         <React.Fragment key={page.node.fields.slug}>
-          <StyledLink to={page.node.fields.slug}>
-            {page.node.frontmatter.title}
-          </StyledLink>{" "}
+          <NavItem page={page} />{" "}
         </React.Fragment>
       ))}
     </nav>
