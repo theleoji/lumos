@@ -15,12 +15,17 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: description, label: Description }
-      - { name: show_nav, label: "Show in Navigation?", widget: "boolean" }
+      - {
+          name: show_nav,
+          label: "Show in Navigation?",
+          widget: "boolean",
+          required: false,
+        }
       - {
           name: nav_order,
           label: "Navigation order",
           widget: "number",
           required: false,
         }
-      - { name: external_link, label: "Redirect URL" }
+      - { name: external_link, label: "Redirect URL", required: false }
       - { name: body, label: Body, widget: markdown }
