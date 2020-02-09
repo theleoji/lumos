@@ -6,29 +6,24 @@ import { rhythm } from "../utils/typography"
 import Header from "./header"
 import Nav from "./nav"
 
-class Layout extends React.Component {
-  render() {
-    const { children } = this.props
-    return (
-      <Wrapper>
-        <div
-          style={{
-            gridColumn: "1 / -1",
-          }}
-        >
-          <Header />
-          <Nav />
-          <main>{children}</main>
-        </div>
-        <Footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
-      </Wrapper>
-    )
-  }
-}
+const Layout = ({ children }) => (
+  <Wrapper>
+    <div
+      style={{
+        gridColumn: "1 / -1",
+      }}
+    >
+      <Header />
+      <Nav />
+      <main>{children}</main>
+    </div>
+    <Footer>
+      © {new Date().getFullYear()}, Built with
+      {` `}
+      <a href="https://www.gatsbyjs.org">Gatsby</a>
+    </Footer>
+  </Wrapper>
+)
 
 const Wrapper = styled.div`
   min-height: 100vh;
