@@ -1,4 +1,6 @@
 ---
+path: /contact/secure/
+date: 2020-02-09T18:29:46.387Z
 title: Secure methods of contact
 description: if necessary
 ---
