@@ -16,6 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                path
               }
             }
           }
@@ -32,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     pages.forEach(page => {
       createPage({
-        path: `${page.node.fields.slug}`,
+        path: `${page.node.frontmatter.path}`,
         component: pageTemplate,
         context: {
           slug: page.node.fields.slug,
