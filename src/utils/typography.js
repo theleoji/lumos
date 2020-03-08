@@ -2,22 +2,21 @@
 import gray from "gray-percentage"
 import { MOBILE_MEDIA_QUERY } from "typography-breakpoint-constants"
 import Typography from "typography"
+import CodePlugin from "typography-plugin-code"
 
 const Wordpress2016 = {
   title: "Wordpress Theme 2016",
+  plugins: [new CodePlugin()],
   baseFontSize: "16px",
   baseLineHeight: 1.75,
   scaleRatio: 5 / 2,
-  headerFontFamily: ["Merriweather", "Georgia", "serif"],
+  headerFontFamily: ["Playfair Display", "Georgia", "serif"],
   bodyFontFamily: ["Merriweather", "Georgia", "serif"],
   bodyColor: "hsla(0,0%,0%,0.9)",
   headerWeight: 900,
   bodyWeight: 400,
   boldWeight: 700,
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
-    h1: {
-      fontFamily: ["Playfair Display", "sans-serif"].join(","),
-    },
     blockquote: {
       ...scale(1 / 5),
       color: gray(41),

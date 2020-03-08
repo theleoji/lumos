@@ -5,6 +5,7 @@ import { rhythm } from "../utils/typography"
 
 import Header from "./header"
 import Nav from "./nav"
+import Footer from "./footer"
 
 const Layout = ({ children }) => (
   <Wrapper>
@@ -17,11 +18,7 @@ const Layout = ({ children }) => (
       <Nav />
       <main>{children}</main>
     </div>
-    <Footer>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </Footer>
+    <Footer />
   </Wrapper>
 )
 
@@ -34,12 +31,6 @@ const Wrapper = styled.div`
   max-width: ${rhythm(24)};
   margin: 0 auto;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
-`
-
-const Footer = styled.footer`
-  text-align: center;
-  margin: 24px;
-  grid-column: 1 / -1;
 `
 
 export default Layout
