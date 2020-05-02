@@ -5,6 +5,9 @@
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
 
+[[plugins]]
+package = "netlify-plugin-subfont"
+
 [[redirects]]
   from = "https://leoji.dev/*"
   to = "https://leoji.codes/:splat"
@@ -18,7 +21,7 @@ package = "netlify-plugin-gatsby-cache"
   force = true
 
 [[redirects]]
-  from = "https://theleoji.netlify.app/*"
+  from = "https://theleoji.netlify.com/*"
   to = "https://leoji.codes/:splat"
   status = 301
   force = true
