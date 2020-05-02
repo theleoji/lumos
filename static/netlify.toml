@@ -2,6 +2,9 @@
   publish = "./public"
   command = "yarn run build"
 
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"
+
 [[redirects]]
   from = "https://leoji.dev/*"
   to = "https://leoji.codes/:splat"
@@ -15,7 +18,7 @@
   force = true
 
 [[redirects]]
-  from = "https://theleoji.netlify.com/*"
+  from = "https://theleoji.netlify.app/*"
   to = "https://leoji.codes/:splat"
   status = 301
   force = true
